@@ -6,6 +6,8 @@ import App from './components/App';
 import store from './stores';
 import registerServiceWorker from './registerServiceWorker';
 
+
+
 ReactDOM.render(
   <Provider { ...store }>
     <App />

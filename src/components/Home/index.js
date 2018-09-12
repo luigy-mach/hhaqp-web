@@ -5,6 +5,13 @@ import { compose } from 'recompose';
 import withAuthorization from '../Session/withAuthorization';
 import { db } from '../../firebase';
 
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
+
+
 class HomePage extends Component {
   componentDidMount() {
     const { userStore } = this.props;
@@ -24,7 +31,16 @@ class HomePage extends Component {
         <p>bla bla bla.</p>
 
         { !!users && <UserList users={users} /> }
+
+
+        <Button color="danger">Danger!</Button>
+
+
       </div>
+  
+
+
+
     );
   }
 }
@@ -40,6 +56,8 @@ const UserList = ({ users }) =>
   </div>
 
 const authCondition = (authUser) => !!authUser;
+
+
 
 export default compose(
   withAuthorization(authCondition),
